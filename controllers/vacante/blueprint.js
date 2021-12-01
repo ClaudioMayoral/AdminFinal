@@ -23,6 +23,18 @@ exports.getVacante = (req, res)=>{
     })
 }
 
+exports.getVacanteCliente = (req, res)=>{
+    modeloVacante.findAll({
+        where:{
+            id_empresa: req.params.id
+        }
+    }).then(vacante=>{
+        res.json(vacante)
+    }).catch(err=>{
+        res.json({estado: mensajes.NotFoundException})
+    })
+}
+
 
 exports.createVacante = (req, res)=>{
 
@@ -31,6 +43,7 @@ exports.createVacante = (req, res)=>{
         remuneracion: req.body.remuneracion,
         id_empresa: req.body.idEmpresa,
         cantidad: req.body.cantidad,
+        nombre: req.body.nombre,
     }).then(result=>{
         res.json({
             estado: mensajes.SuccessCreate,

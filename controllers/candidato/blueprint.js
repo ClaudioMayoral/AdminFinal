@@ -29,6 +29,7 @@ exports.createCandidato = (req, res)=>{
         correo: req.body.correo,
         escolaridad: req.body.escolaridad,
         carrera: req.body.carrera,
+        requisitos: req.body.requisitos,
     }).then(result=>{
         res.json({
             estado: mensajes.SuccessCreate,

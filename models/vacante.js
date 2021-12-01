@@ -24,7 +24,15 @@ const vacante = (sequelize)=>{
         cantidad:{
             type: Sequelize.INTEGER,
             allowNull: false,
-        }
+        },
+        requisitos:{
+            type: Sequelize.STRING,
+            allowNull: false,
+        },
+        nombre:{
+            type: Sequelize.STRING,
+            allowNull: false,
+        },
     })
 }
 module.exports = vacante

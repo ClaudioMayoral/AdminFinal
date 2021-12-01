@@ -23,6 +23,10 @@ const candidato = (sequelize)=>{
         carrera:{
             type: Sequelize.STRING,
             allowNull: true,
+        },
+        requisitos:{
+            type: Sequelize.STRING,
+            allowNull: true,
         }
     })
 }
