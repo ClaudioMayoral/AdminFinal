@@ -27,6 +27,10 @@ const candidato = (sequelize)=>{
         requisitos:{
             type: Sequelize.STRING,
             allowNull: true,
+        },
+        cursos:{
+            type: Sequelize.STRING,
+            allowNull: true,
         }
     })
 }

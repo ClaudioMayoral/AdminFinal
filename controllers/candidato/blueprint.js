@@ -41,3 +41,22 @@ exports.createCandidato = (req, res)=>{
         res.json({estado:mensajes.Forbiden})
     })
 }
+
+exports.updateCandidato = (req, res)=>{
+    modeloCandidato.update({
+        cursos: req.body.cursos,
+    },{
+        where:{
+            id: req.params.id
+        }
+    }
+    ).then(result=>{
+        res.json({
+            estado: mensajes.SuccessUpdate,
+        })
+    })
+    .catch((err)=>{
+        console.log(err)
+        res.json({estado:mensajes.Forbiden})
+    })
+}

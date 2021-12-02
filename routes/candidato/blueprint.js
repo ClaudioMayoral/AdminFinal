@@ -10,5 +10,7 @@ router.get("/:id",candidatoController.getCandidato)
 
 router.post('/crear',candidatoController.createCandidato)
 
+router.post('/actualizar/:id',candidatoController.updateCandidato)
+
 
 module.exports = router
